@@ -4,7 +4,7 @@
 ;;; License: MIT License
 (defsystem xport
   :name "xport"
-  :version "0.8.0"
+  :version "0.9.0"
   :maintainer "Takehiko Nawata"
   :author "Takehiko Nawata"
   :license "MIT License"
