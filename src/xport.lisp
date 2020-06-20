@@ -16,3 +16,8 @@
   (defmacro xdefmacro (name lambda-list &body body)
     `(xport
        (defmacro ,name ,lambda-list ,@body))))
+
+(export
+  (defmacro xdefun (name lambda-list &body body)
+    `(xport
+       (defun name lambda-list &body body))))
