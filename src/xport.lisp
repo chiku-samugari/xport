@@ -1,9 +1,11 @@
 (in-package :xport)
 
 (export
-  (defmacro xport (situations &body forms)
-    `(eval-when ,(if (eq situations t)
-                   (:compile-toplevel :load-toplevel :execute)
-                   ,situations)
+  (defmacro xport-when (situations &body forms)
+    `(eval-when ,situations
        (export
-         ,@forms))))
+         ,@forms)))
+
+  (defmacro xport (&body forms)
+    `(xport-when (:compile-toplevel :load-toplevel :execute)
+       ,@forms)))
